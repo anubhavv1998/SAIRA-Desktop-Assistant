@@ -6,6 +6,7 @@ import speech_recognition as sr
 import wikipedia
 import webbrowser
 import os
+import random
 import winshell
 import requests
 import wolframalpha
@@ -301,10 +302,10 @@ def play():
 
 
 def update(ind):
-    frame = frames[ind % 100]
+    frame = frames[ind % 60]
     ind += 1
     label.configure(image=frame)
-    window.after(100, update, ind)
+    window.after(10, update, ind)
 
 
 label2 = Label(window, textvariable=var1, bg='#730cfa')
@@ -318,7 +319,7 @@ var.set('Welcome')
 label1.pack()
 
 # noinspection PyRedundantParentheses
-frames = [PhotoImage(file='demoimg.png')]
+frames = [PhotoImage(file='7OQ5.gif', format='gif -index %i'% (i)) for i in range(60)]
 window.title('SAIRA by Anubhav')
 window.iconbitmap(r'iipsicon.ico')
 
