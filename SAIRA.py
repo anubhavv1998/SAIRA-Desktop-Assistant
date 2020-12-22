@@ -302,10 +302,10 @@ def play():
 
 
 def update(ind):
-    frame = frames[ind % 60]
+    frame = frames[ind % 60] #use number of frames of your inserted gif 
     ind += 1
     label.configure(image=frame)
-    window.after(10, update, ind)
+    window.after(10, update, ind) #motion of gif in milliseconds
 
 
 label2 = Label(window, textvariable=var1, bg='#730cfa')
@@ -319,9 +319,9 @@ var.set('Welcome')
 label1.pack()
 
 # noinspection PyRedundantParentheses
-frames = [PhotoImage(file='7OQ5.gif', format='gif -index %i'% (i)) for i in range(60)]
+frames = [PhotoImage(file='7OQ5.gif', format='gif -index %i'% (i)) for i in range(60)] #use number of frames of your inserted gif in place of 60
 window.title('SAIRA by Anubhav')
-window.iconbitmap(r'iipsicon.ico')
+window.iconbitmap(r'iipsicon.ico') #icon will shown at the top left corner
 
 label = Label(window, width=500, height=500)
 label.pack()
