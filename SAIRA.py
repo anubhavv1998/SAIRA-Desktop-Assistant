@@ -308,6 +308,13 @@ def update(ind):
     window.after(10, update, ind) #motion of gif in milliseconds
 
 
+    #Get number of frames
+#from PIL import Image
+#info=Image.open('7OQ5.gif')
+#frames = info.n_frames
+#print(frames)
+
+
 label2 = Label(window, textvariable=var1, bg='#730cfa')
 label2.config(font=("Fixedsys", 15))
 var1.set('User Said:')
@@ -318,7 +325,7 @@ label1.config(font=("Fixedsys", 15))
 var.set('Welcome')
 label1.pack()
 
-# noinspection PyRedundantParentheses
+
 frames = [PhotoImage(file='7OQ5.gif', format='gif -index %i'% (i)) for i in range(60)] #use number of frames of your inserted gif in place of 60
 window.title('SAIRA by Anubhav')
 window.iconbitmap(r'iipsicon.ico') #icon will shown at the top left corner
