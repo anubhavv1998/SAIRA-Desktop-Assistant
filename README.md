@@ -66,7 +66,9 @@ There are a lot of tasks a virtual assistant can perform, but they require a lar
 
 8.	Technologies to be used<br>
 The project will be having the following technology requirement as listed below. With the help of the following software the project will be implemented and thereafter will prove to be helpful to the needed.<br>
+
 <p>
+	
 SOFTWARE REQUIREMENTS<br>
 •	Operating System			:		Windows 10 pro<br>
 •	Programming Language	  		:		Python<br>
@@ -82,6 +84,7 @@ HARDWARE REQUIREMENTS<br>
 •	Hard Disk		  		:		40 GB or more<br>
 •	RAM				      	:		4 GB or more<br>
 •	System Type				:		32 Bit OS<br>
+
 </p>
 
 
@@ -100,15 +103,15 @@ With time and with increase of processing speed of system we can enhance capacit
 								youtube.com<br>
 								google.com<br>
 								towardsdatascience.com<br>
-
-<br>
 <br>
 <hr>
 <br>
 
 ### SAIRA AI DEMO<br>
-
+<p align="center">
+	
 ![SAIRA AI DEMO](https://github.com/anubhavv1998/SAIRA-Desktop-Assistant/blob/main/Assets/SAIRA.gif)
 
+</p>
 <br>
 <hr>
