@@ -1,12 +1,13 @@
 from tkinter import *
+import tkinter as tk
 import cv2
 import pyttsx3
 import datetime
 import speech_recognition as sr
 import wikipedia
 import webbrowser
-import os
 import random
+import os
 import winshell
 import requests
 import wolframalpha
@@ -16,7 +17,7 @@ engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
 
-window = Tk()
+window = tk.Tk()
 
 global var
 global var1
@@ -302,36 +303,29 @@ def play():
 
 
 def update(ind):
-    frame = frames[ind % 60] #use number of frames of your inserted gif 
+    frame = frames[ind % 10]
     ind += 1
     label.configure(image=frame)
-    window.after(10, update, ind) #motion of gif in milliseconds
-
-
-    #Get number of frames
-#from PIL import Image
-#info=Image.open('7OQ5.gif')
-#frames = info.n_frames
-#print(frames)
+    window.after(10, update, ind)
 
 
 label2 = Label(window, textvariable=var1, bg='#730cfa')
-label2.config(font=("Fixedsys", 15))
-var1.set('User Said:')
-label2.pack()
+label2.config(font=("Fixedsys", 30))
+var1.set('YOU SAID:')
+label2.pack(pady=10)
 
 label1 = Label(window, textvariable=var, bg='#ADD8E6')
-label1.config(font=("Fixedsys", 15))
+label1.config(font=("Fixedsys", 20))
 var.set('Welcome')
 label1.pack()
 
-
-frames = [PhotoImage(file='7OQ5.gif', format='gif -index %i'% (i)) for i in range(60)] #use number of frames of your inserted gif in place of 60
+# noinspection PyRedundantParentheses
+frames = [PhotoImage(file='SAIRA.gif', format='gif -index %i'% (i)) for i in range(10)]
 window.title('SAIRA by Anubhav')
-window.iconbitmap(r'iipsicon.ico') #icon will shown at the top left corner
+window.iconbitmap(r'iipsicon.ico')
 
-label = Label(window, width=500, height=500)
-label.pack()
+label = Label(window, width=500, height=150)
+label.pack(pady=135) 
 window.after(0, update, 0)
 
 
@@ -340,7 +334,7 @@ def mode1():
 
 
 def mode2():
-    window.configure(bg='#0CCAFA')
+    window.configure(bg='#f0f0f0')
 
 
 btn0 = Button(text='SAY HI', width=20, command=wishme, bg='#5C85FB')
@@ -355,7 +349,7 @@ btn2.pack()
 btn3 = Button(window, text='DARK MODE', width=20, command=mode1, bg='Black', fg='White')
 btn3.config(font=("Courier", 12))
 btn3.pack()
-btn4 = Button(window, text='COLOR MODE', width=20, command=mode2, fg='Black', bg='Sky Blue')
+btn4 = Button(window, text='LIGHT MODE', width=20, command=mode2, fg='Black', bg='WHITE')
 btn4.config(font=("Courier", 12))
 btn4.pack()
 
