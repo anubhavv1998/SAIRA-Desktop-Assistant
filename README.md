@@ -1,5 +1,9 @@
 # SAIRA Desktop Assistant
 
+![SAIRA](https://github.com/anubhavv1998/SAIRA-Desktop-Assistant/blob/main/Assets/SAIRA.gif)
+
+<hr>
+
 Table of Contents:-
 
 1.	Domain
