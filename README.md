@@ -110,7 +110,7 @@ With time and with increase of processing speed of system we can enhance capacit
 ### SAIRA AI DEMO<br>
 <p align="center">
 	
-![SAIRA AI DEMO](https://github.com/anubhavv1998/SAIRA-Desktop-Assistant/blob/main/Assets/SAIRA.gif)
+![SAIRA AI DEMO](https://github.com/anubhavv1998/SAIRA-Desktop-Assistant/blob/main/Assets/SAIRA%20Demo.gif)
 
 </p>
 <br>
