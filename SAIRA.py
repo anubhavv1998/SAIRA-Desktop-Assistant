@@ -87,23 +87,53 @@ def play():
             window.update()
             break
 
-        elif 'wikipedia' in query:
-            if 'open wikipedia' in query:
-                webbrowser.open('wikipedia.com')
-            else:
-                
-                try:
-                    speak("searching wikipedia")
-                    query = query.replace("according to wikipedia", "")
-                    results = wikipedia.summary(query, sentences=1)
-                    speak("According to wikipedia")
-                    var.set(results)
-                    window.update()
-                    speak(results)
-                except Exception as e:
-                    var.set('sorry sir could not find any results')
-                    window.update()
-                    speak('sorry sir could not find any results')
+#general conversation
+
+        elif 'hello' in query:
+            var.set('Hello Sir')
+            window.update()
+            speak("Hello Sir")
+
+        elif 'thank you' in query:
+            var.set("Welcome Sir")
+            window.update()
+            speak("Welcome Sir")
+
+        elif ('old are you' in query) or ('version' in query):
+            var.set("Version 0.1.1 ")
+            window.update()
+            speak("I am a newbie sir ! Version 0.1.1")
+
+        elif 'your name' in query:
+            var.set("Myself SAIRA")
+            window.update()
+            speak("Myself SAIRA")
+
+        elif 'who made you' in query:
+            var.set("My Creator is Anubhav Singh")
+            window.update()
+            speak("My Creator is Anubhav Singh")
+
+        elif 'sleep' in query:
+            var.set('Sleeping...............')
+            window.update()
+            speak("OK Anubhav!! time to sleep have a good day")
+            quit()
+
+#System date and time
+        elif 'time' in query:
+            strtime = datetime.datetime.now().strftime("%I %M %S %p")
+            var.set("Sir the time is %s" % strtime)
+            window.update()
+            speak("Sir the time is %s" % strtime)
+
+        elif 'date' in query:
+            strdate = datetime.datetime.today().strftime("%d %m %y")
+            var.set("Sir today's date is %s" % strdate)
+            window.update()
+            speak("Sir today's date is %s" % strdate)
+
+#open system folders and softwares
 
         elif 'open movies' in query:
             var.set("Opening Movies")
@@ -141,16 +171,57 @@ def play():
             speak('opening google')
             webbrowser.open("google.com")
 
-        elif 'hello' in query:
-            var.set('Hello Sir')
-            window.update()
-            speak("Hello Sir")
-
         elif 'open stackoverflow' in query:
             var.set('opening stackoverflow')
             window.update()
             speak('opening stackoverflow')
             webbrowser.open('stackoverflow.com')
+
+        elif 'open github' in query:
+            var.set('opening github')
+            window.update()
+            speak('opening github')
+            webbrowser.open('https://github.com/anubhavv1998')
+
+        elif 'open media player' in query:
+            var.set("opening VLC media Player")
+            window.update()
+            speak("opening V L C media player")
+            os.startfile("C:\\Program Files (x86)\\VideoLAN\\VLC\\vlc.exe")
+
+        elif 'open python' in query:
+            var.set("Opening Python")
+            window.update()
+            speak("Opening Python")
+            os.startfile("C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python39\\python.exe")
+
+        elif 'open chrome' in query:
+            var.set("Opening Google Chrome")
+            window.update()
+            speak("Opening Google Chrome")
+            os.startfile("C:\\Users\\Lenovo\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe")
+
+        elif 'open sublime' in query:
+            var.set('Opening Sublime')
+            window.update()
+            speak('opening Sublime')
+            os.startfile("C:\\Program Files\\Sublime Text 3\\sublime_text.exe")
+
+        elif 'open anaconda' in query:
+            var.set('Opening Anaconda')
+            window.update()
+            speak('opening anaconda')
+            os.startfile("C:\\Users\\Lenovo\\anaconda3\\python.exe")
+
+        elif 'news' in query:
+            var.set('Opening news')
+            window.update()
+            news = webbrowser.open_new_tab("https://timesofindia.indiatimes.com/home/headlines")
+            speak('Here are some headlines from the Times of India,Happy reading')
+            time.sleep(6)
+            
+
+#random module 
 
         elif ('play music' in query) or ('music' in query):
             var.set('Here are your favorites')
@@ -161,21 +232,33 @@ def play():
             n = random.randint(0, 71)
             os.startfile(os.path.join(music_dir, songs[n]))
 
-        elif 'time' in query:
-            strtime = datetime.datetime.now().strftime("%I %M %S %p")
-            var.set("Sir the time is %s" % strtime)
-            window.update()
-            speak("Sir the time is %s" % strtime)
+#Wikipedia module
 
-        elif 'date' in query:
-            strdate = datetime.datetime.today().strftime("%d %m %y")
-            var.set("Sir today's date is %s" % strdate)
-            window.update()
-            speak("Sir today's date is %s" % strdate)
+        elif 'wikipedia' in query:
+            if 'open wikipedia' in query:
+                webbrowser.open('wikipedia.com')
+            else:
+                
+                try:
+                    speak("searching wikipedia")
+                    query = query.replace("according to wikipedia", "")
+                    results = wikipedia.summary(query, sentences=1)
+                    speak("According to wikipedia")
+                    var.set(results)
+                    window.update()
+                    speak(results)
+                except Exception as e:
+                    var.set('sorry sir could not find any results')
+                    window.update()
+                    speak('sorry sir could not find any results')
+
+#empty recycle bin
 
         elif 'empty recycle bin' in query:
             winshell.recycle_bin().empty(confirm = False, show_progress = False, sound = True)
             speak("Recycle Bin Recycled")
+
+#Wolframe Alpha API
 
         elif "calculate" in query:  
             app_id = "PTW6PG-X63YYGTL6W"
@@ -197,6 +280,8 @@ def play():
                 print ("No results")
                 speak('No results found')
 
+#Google Map access
+
         elif "where is" in query:
             query = query.replace("where is", "")
             location = query
@@ -204,26 +289,7 @@ def play():
             speak(location)
             webbrowser.open("https://www.google.nl/maps/place/"+location+"")
 
-        elif 'thank you' in query:
-            var.set("Welcome Sir")
-            window.update()
-            speak("Welcome Sir")
-
-        elif ('old are you' in query) or ('version' in query):
-            var.set("Version 0.1.1 ")
-            window.update()
-            speak("I am a newbie sir ! Version 0.1.1")
-
-        elif 'open media player' in query:
-            var.set("opening VLC media Player")
-            window.update()
-            speak("opening V L C media player")
-            os.startfile("C:\\Program Files (x86)\\VideoLAN\\VLC\\vlc.exe")
-
-        elif 'your name' in query:
-            var.set("Myself SAIRA")
-            window.update()
-            speak("Myself SAIRA")
+#Open weather API
 
         elif 'weather' in query:
             api_key = "659d4ba65a35ab7af4a4a6926062d70e"
@@ -252,11 +318,15 @@ def play():
                       "\n description = " +
                       str(weather_description))
 
+#Open anything on youtube
+
         elif 'on youtube' in query:
             song = query.replace('play','')
             var.set('Playing on Youtube')
             speak('playing'+song)
             pwt.playonyt(song)
+
+#open camera 
 
         elif 'click photo' in query:
             stream = cv2.VideoCapture(0)
@@ -266,40 +336,7 @@ def play():
                 cv2.imwrite('pic.jpg', frame)
                 stream.release()
 
-        elif 'who made you' in query:
-            var.set("My Creator is Anubhav Singh")
-            window.update()
-            speak("My Creator is Anubhav Singh")
-
-        elif 'open python' in query:
-            var.set("Opening Python")
-            window.update()
-            speak("Opening Python")
-            os.startfile("C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python39\\python.exe")
-
-        elif 'open chrome' in query:
-            var.set("Opening Google Chrome")
-            window.update()
-            speak("Opening Google Chrome")
-            os.startfile("C:\\Users\\Lenovo\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe")
-
-        elif 'open sublime' in query:
-            var.set('Opening Sublime')
-            window.update()
-            speak('opening Sublime')
-            os.startfile("C:\\Program Files\\Sublime Text 3\\sublime_text.exe")
-
-        elif 'open anaconda' in query:
-            var.set('Opening Anaconda')
-            window.update()
-            speak('opening anaconda')
-            os.startfile("C:\\Users\\Lenovo\\anaconda3\\python.exe")
-
-        elif 'sleep' in query:
-            var.set('Sleeping...............')
-            window.update()
-            speak("OK Anubhav!! time to sleep have a good day")
-            quit()
+#User Interface
 
 
 def update(ind):
