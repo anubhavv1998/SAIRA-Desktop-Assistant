@@ -261,7 +261,7 @@ def play():
 #Wolframe Alpha API
 
         elif "calculate" in query:  
-            app_id = "PTW6PG-X63YYGTL6W"
+            app_id = ""
             client = wolframalpha.Client(app_id)
             indx = query.lower().split().index('calculate') 
             query = query.split()[indx + 1:] 
@@ -271,7 +271,7 @@ def play():
             speak("The answer is " + answer)
 
         elif "what is" in query or "who is" in query:
-            client = wolframalpha.Client("PTW6PG-X63YYGTL6W")
+            client = wolframalpha.Client("")
             res = client.query(query)
             try:
                 print (next(res.results).text)
@@ -292,7 +292,7 @@ def play():
 #Open weather API
 
         elif 'weather' in query:
-            api_key = "659d4ba65a35ab7af4a4a6926062d70e"
+            api_key = ""
             base_url = "http://api.openweathermap.org/data/2.5/weather?"
             speak("what is the city name")
             city_name = takeCommand()
