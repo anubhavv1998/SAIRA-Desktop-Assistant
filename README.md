@@ -54,6 +54,10 @@ pywin32 module
 pywhatkit module
 
 	pip install pywhatkit
+
+wolframealpha module
+
+	pip install wolframealpha
 	
 Rest modules are predefined in python 3+ versions.
 
