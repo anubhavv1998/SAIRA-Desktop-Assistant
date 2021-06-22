@@ -3,7 +3,7 @@
 ![SAIRA](https://github.com/anubhavv1998/SAIRA-Desktop-Assistant/blob/main/Assets/SAIRA.gif)
 
 <hr>
-How to use this process
+How to use this project
 
 First have a copy of main program with required assets associated to that, then install the below mentioned modules. Install these by ugrading pip by 
 		
